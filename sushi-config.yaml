@@ -1,0 +1,44 @@
+id: mohw.tw.ohe
+canonical: https://twcore.mohw.gov.tw/ig/ohe
+name: TWOHEIG
+title: 臺灣勞工職業健康體格及健康檢查實作指引 (Taiwan Occupational Health Examination Implementation Guide)
+description: 臺灣勞工健康檢查與臨場健康服務執行紀錄之 FHIR 實作指引。依據《勞工健康保護規則》設計，繼承臺灣核心實作指引 (TW Core IG)。
+status: active
+version: 0.1.0
+fhirVersion: 4.0.1
+copyrightYear: 2026+
+releaseLabel: STU1
+publisher:
+  name: 衛生福利部次世代數位醫療平臺專案辦公室 & 長庚醫療財團法人長庚紀念醫院
+  url: https://twcore.mohw.gov.tw/twregistry/
+contact:
+  - name: 衛生福利部次世代數位醫療平臺專案辦公室
+    telecom:
+      - system: url
+        value: https://twcore.mohw.gov.tw/twregistry/
+dependencies:
+  tw.gov.mohw.twcore: 1.0.0
+  fhir.twcrsf: 0.1.1
+
+menu:
+  首頁 (Home): index.html
+  背景與案例 (Background & Use Cases):
+    背景 (Background): background.html
+    應用案例 (Use Cases): usecases.html
+  資料模型 (Data Model): datamodel.html
+  檢查與紀錄定義 (Examinations):
+    一般體格及健康檢查 (General Exam): general-exam.html
+    特殊危害健康作業檢查 (Special Exam): special-exam.html
+    勞工健康服務執行紀錄 (Service Record): service-record.html
+    健康管理分級 (Health Management): health-management.html
+  FHIR 資源 (FHIR Artifacts):
+    資源總覽 (Artifacts Summary): artifacts.html
+    Profiles: artifacts.html#1
+    Extensions: artifacts.html#2
+    Value Sets: artifacts.html#3
+    Code Systems: artifacts.html#4
+  術語與安全 (Terminology & Security):
+    術語定義 (Terminology): terminology.html
+    安全性考量 (Security): security.html
+  下載區 (Downloads): downloads.html
+

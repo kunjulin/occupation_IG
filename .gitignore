@@ -1,0 +1,21 @@
+# FHIR IG Publisher / SUSHI outputs and caches
+fsh-generated/
+input-cache/
+output/
+temp/
+.fhir/
+
+# Package and archive files
+*.zip
+*.tgz
+*.tar.gz
+
+# Log files
+*.log
+*jobs.xml
+
+# OS and IDE specific files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
