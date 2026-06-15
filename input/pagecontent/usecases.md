@@ -1,87 +1,86 @@
 # 使用情境 (Use Cases)
 
-本實作指引旨在支援職業健康管理與臨場健康服務的數位化轉型，定義了以下 **7 大核心使用情境**：
+本實作指引支援多元化健康檢查情境之資料交換，特別定義以下 **6 大核心使用情境 (UC-001 ~ UC-006)**。這些情境透過對應之 Exchange Package 打包傳輸，以符合臨床端、企業雇主、個人及政府平台的介接需求。
 
 ---
 
-## Use Case 1: 一般體格檢查資料交換 (New Employee Physical Exam)
+## UC-001: 一般健檢 (Common General Assessment)
 
-*   **情境背景**：當雇主僱用新進勞工時，依法必須實施一般體格檢查（項目規範如附表九）。
-*   **資料對象**：新進勞工（王大同）。
-*   **交換流程**：
-    1. 勞工前往特約健檢醫院（長庚醫院）受檢。
-    2. 醫院端系統生成符合 `TWHA-Bundle` (type=document) 的健檢結果，其中以 `TWHA-Composition` 封裝基本資料、理學檢查與一般實驗室檢驗（Hb, WBC, 尿蛋白, 尿潛血）。
-    3. 醫院系統透過安全 API 將結果傳輸至事業單位（雇主公司）之職安衛系統或職場健康服務管理平台。
-*   **優勢**：取代紙本郵寄與手動登打，縮短錄取報到審查流程。
-*   **實體資料範例與架構說明**：
-    本指引提供了一個完整的實體資料交換範例 [健檢紀錄完整封裝 Bundle 範例 (UC-001)](Bundle-UC-001.html)，其內含一個臨床文件 `TWHACompositionProfile` (一般健檢報告) 以及對應附表九法定項目的所有實體 `Observation` 資源，包括：
-    *   **人口學與行政資訊**：受檢勞工 ([example-worker](Patient-example-worker.html))、就醫/體檢事件 ([example-encounter-general](Encounter-example-encounter-general.html))、健檢醫療機構 ([example-hospital](Organization-example-hospital.html))。
-    *   **生理功能檢查**：身高體重與血壓 ([obs-height](Observation-obs-height.html), [obs-weight](Observation-obs-weight.html), [obs-bloodpressure](Observation-obs-bloodpressure.html))、視力圖 ([obs-vision](Observation-obs-vision.html))、聽力圖 ([obs-hearing](Observation-obs-hearing.html))。
-    *   **物理與生理系統檢查**：醫師進行的各系統理學檢查結果 ([obs-physical](Observation-obs-physical.html))。
-    *   **一般實驗室檢驗項目**：空腹血糖 ([obs-lab-glucose](Observation-obs-lab-glucose.html))。
-    *   **健康習慣問卷調查**：吸菸習慣 ([obs-smoking](Observation-obs-smoking.html))、嚼檳榔習慣 ([obs-betelnut](Observation-obs-betelnut.html))、睡眠評估 ([obs-sleep](Observation-obs-sleep.html)) 及自覺症狀問卷結果 ([example-symptoms-response](QuestionnaireResponse-example-symptoms-response.html))。
-    *   **既往病史登錄**：高血壓史 ([example-past-condition](Condition-example-past-condition.html))。
-    *   **醫師總評判定**：醫師做出的健康管理分級與總評意見 ([example-clinical-impression](ClinicalImpression-example-clinical-impression.html))。
+*   **情境背景**：適用於一般非特定政策性、個人的基礎健康檢查或入學體檢，核心著重在基本生理特徵與基礎實驗室篩檢。
+*   **資料對象**：一般受檢民眾。
+*   **資料包裝**：
+    *   以 `TWHA-Bundle-Document` 進行封裝，其首個 entry 為 `TWHA-Composition`，將報告的 title 標註為「一般健康檢查報告」。
+    *   包含基本資料與就醫事件：`TWHA-Patient`（受檢者）、`TWHA-Encounter`（就醫/體檢事件）、`TWHA-Practitioner`（醫師/護理師）、`TWHA-Organization`（實施健檢之醫療機構）。
+    *   包含物理檢查與生理測量項目：`TWHA-VitalSigns`（身高、體重、BMI、腰圍、血壓）。
+    *   基礎實驗室檢驗項目：`TWHA-LabResult-General`（如血糖值）。
+    *   醫師臨床總評：`TWHA-ClinicalImpression`（健康管理分級判定）。
+*   **對應範例**：[UC-001 一般健康檢查報告封包範例](Bundle-UC-001.html)。
 
 ---
 
-## Use Case 2: 一般健康檢查資料交換 (On-the-Job Regular Exam)
+## UC-002: 勞工一般健檢 (Occupational General Health Check)
 
-*   **情境背景**：雇主對在職勞工，應依年齡與週期實施定期一般健康檢查（65歲以上每年、40-64歲每三年、40歲以下每五年一次）。
-*   **資料對象**：全體在職勞工。
-*   **交換流程**：與 Use Case 1 類似，但包含更完整的生化檢查項目（血糖、ALT、肌酸酐、總膽固醇、三酸甘油酯、HDL-C、LDL-C 等）及檢查週期擴充 `ext-exam-interval`（設定為 3 或 5 年）。
-*   **優勢**：自動追蹤勞工歷年健檢趨勢，實施職場慢性病群體健康管理。
-
----
-
-## Use Case 3: 特殊作業健康檢查 (Hazardous Worker Special Exam)
-
-*   **情境背景**：從事噪音、鉛、粉塵等特別危害健康作業勞工，應於從事該作業前實施特殊體格檢查，並於在職期間每年實施特殊健康檢查。
-*   **作業聚焦**：第一版優先聚焦於 **噪音作業**、**鉛作業** 與 **粉塵作業**。
-*   **交換流程**：
-    - 噪音作業：封裝純音聽力圖數據（`TWHA-HearingTest`）。
-    - 鉛作業：封裝血中鉛濃度（`TWHA-LabResult-Special`）與紅血球、比容值等指標。
-    - 粉塵作業：封裝胸部 X 光報告（`TWHA-ImagingStudy` / `TWHA-DiagnosticReport`）與肺功能數值（FEV1, FVC）。
-*   **優勢**：臨床與現場暴露數據精確對應，利於早期防範职业病。
+*   **情境背景**：依據《勞工健康保護規則》附表九與附表十一規定，雇主僱用新進勞工或對在職勞工進行定期一般體格及健康檢查。
+*   **資料對象**：受檢在職勞工。
+*   **資料包裝**：
+    *   包含 UC-001 的所有基礎欄位，且將報告 title 標註為「勞工一般體格及健康檢查紀錄」。
+    *   **擴充受檢者雇主資訊**：`TWHA-Patient` 必須包含雇主事業單位（統一編號）、受僱日期與所屬部門。
+    *   **生活習慣與既往史調查**：`TWHA-SocialHistory` 記錄吸菸、飲酒、嚼檳榔與睡眠時間；`TWHA-Condition` 記錄高血壓、糖尿病等既往病史。
+    *   **自覺症狀問卷結果**：`TWHA-QuestionnaireResponse` 記錄受檢者之自覺症狀問卷填寫紀錄。
+    *   **法定物理與實驗室檢查**：包含視力與辨色力（`TWHA-Vision`）、聽力篩檢（`TWHA-Hearing`）以及完整的法定尿液/血液化學檢驗項目。
+    *   **醫師適性配工建議**：針對異常個案，醫師評估後可提供 `TWHA-CarePlan`（適性配工計畫）或 `TWHA-ServiceRequest`（追蹤檢查要求）。
+*   **對應範例**：[UC-002 勞工一般體格與健康檢查報告封包範例](Bundle-UC-002.html)。
 
 ---
 
-## Use Case 4: 臨場健康服務紀錄申報 (Workplace On-site Service Logging)
+## UC-003: 特殊作業健檢 (Occupational Special Health Check)
 
-*   **情境背景**：特約醫護人員（職醫、職護）至事業單位進行臨場健康服務時，應依「附表八」項目完整記錄服務活動。
-*   **資料對象**：事業單位、工作場所部門、全體勞工暴露特性。
-*   **交換流程**：
-    1. 職醫/職護完成臨場巡視、諮詢與健康指導。
-    2. 填寫臨場紀錄並產出 `TWHA-Composition-ServiceRecord`（包含 `TWHA-Encounter-Service` 服務事件與 `TWHA-Procedure-ServiceActivity` 辦理事項）。
-    3. 系統自動產出「發現問題」與「改善建議」的 `Observation-ServiceFinding` 與 `Task-ServiceTask`。
-    4. 資料加密保存於事業單位，並可匯出為標準 JSON 上傳至職安署職場健康服務管理系統。
-*   **優勢**：標準化臨場服務足跡，簡化勞動檢查備查作業。
-
----
-
-## Use Case 5: 醫師總評與健康管理分級 (Physician Grading 1-4)
-
-*   **情境背景**：體檢判定醫師應於檢查後，依勞工健檢結果進行綜合總評，並判定健康管理分級。
-*   **分級機制**：第一級（正常/無關）、第二級（異常但與工作無關）、第三級（不確定相關性，需追蹤或現場評估）、第四級（與工作相關，危害顯著）。
-*   **資料表現**：
-    - 在 `TWHA-ClinicalImpression` 中以 `ext-health-mgmt-level` 記錄判定分級，於 `summary` 記錄醫師意見。
-*   **優勢**：提供結構化的分級指標，觸發後續的臨床或行政處置。
+*   **情境背景**：針對從事特別危害健康作業（如噪音、鉛、粉塵等 12 大類特別危害）之勞工實施定期特殊健康檢查，對應《勞工健康保護規則》附表十。
+*   **資料對象**：從事特別危害健康作業之勞工。
+*   **資料包裝**：
+    *   報告 title 標註為「特殊危害健康作業檢查報告」。
+    *   **暴露作業登錄**：`TWHA-WorkExposure` 記錄危害作業類別（如噪音、鉛）、暴露年數與詳細工作性質。
+    *   **特殊檢查指標**：
+        - 噪音作業：`TWHA-HearingTest` 記錄氣導聽閾（純音聽力圖 500Hz ~ 8000Hz 數值）。
+        - 鉛作業：`TWHA-LabResult-Special` 記錄血中鉛/尿中鉛/尿 delta-ALA 等生物監測值。
+        - 粉塵作業：`TWHA-ImagingStudy`（胸部 X 光大片造影）與 `TWHA-PulmonaryFunction`（肺功能 Spirometry：FVC, FEV1, FEV1/FVC 比值）。
+*   **對應範例**：[UC-003 特殊危害健康作業檢查報告封包範例](Bundle-UC-003.html)。
 
 ---
 
-## Use Case 6: 適性配工與追蹤執行 (Fitness-for-Work & Follow-up)
+## UC-004: 企業健檢 (Corporate Premium Health Assessment)
 
-*   **情境背景**：針對第四級個案進行工作調整，或針對第三級個案進行追蹤檢查。
-*   **交換流程**：
-    - 當分級為 `level-4`：職安衛系統自動生成 `TWHA-CarePlan`（適性配工計畫），其中包含 `ext-fitness-for-work`（工作調整建議：變更場所、工作或縮短工時）並由雇主執行。
-    - 當分級為 `level-3`：醫事系統自動生成 `TWHA-ServiceRequest`（追蹤檢查要求），排程三個月內重檢或現場評估。
-*   **優勢**：實現自動化個案追蹤與管理閉環，防止勞工病情惡化。
+*   **情境背景**：企業為員工提供之進階自費高階健康檢查，或個人於健檢中心進行之自費檢查，通常包含許多影像造影與鏡檢。
+*   **資料對象**：受檢勞工或一般民眾。
+*   **資料包裝**：
+    *   報告 title 標註為「自費健康檢查報告」。
+    *   **進階影像造影與鏡檢**：以 Observation 資源記錄多項高階檢查結果，如乳房攝影（LOINC `24606-6`）、腦部 MRI（LOINC `24590-2`）、低劑量電腦斷層 LDCT（LOINC `79086-5`）、全身正子造影 PET/CT（LOINC `81555-5`）、心臟冠狀動脈攝影 CTA（LOINC `79073-3`）、胃鏡鏡檢 EGD（LOINC `28014-9`）、大腸鏡鏡檢（LOINC `28023-0`）。
+*   **對應範例**：[UC-004 企業自費健康檢查報告封包範例](Bundle-UC-004.html)。
 
 ---
 
-## Use Case 7: 勞工健康檢查結果自動化申報 (Automation Reporting to Government)
+## UC-005: 成人預防保健 (Adult Preventive Care)
 
-*   **情境背景**：醫療機構與事業單位依法需將勞工健檢結果與分級統計通報至勞動部職業安全衛生署。
-*   **交換流程**：
-    - 健檢機構與事業單位系統透過 API 呼叫，傳輸符合本指引標準的 `TWHA-Bundle` (含 `ext-labor-report-code` 通報代碼) 至政府通報伺服器，由伺服器自動解析、存檔並產出統計報表。
-*   **優勢**：一鍵通報，降低申報錯誤率，協助政府精確掌握全國職業病流行病學特徵。
+*   **情境背景**：衛生福利部國民健康署提供之中老年人定期成人預防保健服務之申報與交換。
+*   **資料對象**：符合成人預防保健篩檢資格之受檢者。
+*   **資料包裝**：
+    *   報告 title 標註為「成人預防保健檢查報告」。
+    *   **生活習慣與家屬史自填問卷**：`TWHA-QuestionnaireResponse-HT` 包含個人既往病史、直系親屬家族史（腦中風、心臟病、糖尿病）、吸菸習慣、飲酒習慣、嚼檳榔習慣及運動習慣。
+    *   **精簡社會決定因素**：`TWHA-SDOH-Questionnaire` (精簡版 PRAPARE 社會風險問卷) 包含受檢者之教育程度、就業狀態、經濟困難等社會經濟指標。
+    *   **生理測量與實驗室生化檢驗**：身高、體重、腰圍、血壓、空腹血糖、三酸甘油酯、總膽固醇、HDL-C、LDL-C、尿蛋白定性以及以肌酸酐估算之腎絲球過濾率 (eGFR)。
+*   **對應範例**：[UC-005 成人預防保健檢查報告封包範例](Bundle-UC-005.html)。
+
+---
+
+## UC-006: 臨場服務紀錄 (On-site Labor Health Service Record)
+
+*   **情境背景**：特約醫護人員（職安衛醫護、職醫、職護）至事業單位進行臨場健康服務活動時之執行紀錄申報，對應《勞工健康保護規則》附表八。
+*   **資料對象**：事業單位、工作場所部門、作業環境或員工群組。
+*   **資料包裝**：
+    *   以 `TWHA-Bundle-Document` 進行封裝，報告 title 標註為「勞工健康服務執行紀錄表」。
+    *   報告組成核心：`TWHA-Composition-ServiceRecord`。
+    *   **服務訪談與事件**：`TWHA-Encounter-Service` 記錄服務活動之時程與對應事業單位部門。
+    *   **臨場服務執行活動**：`TWHA-Procedure-ServiceActivity` 記錄該次臨場服務之主要執行工作（如健康指導、健康諮詢、現場危害分析）。
+    *   **環境危害發現**：`TWHA-Observation-ServiceFinding` 記錄在作業現場發現之職業危害因子（如噪音暴露、局部排氣裝置異常）。
+    *   **改善建議與追蹤任務**：`TWHA-Task-ServiceTask` 定義指派給雇主公司之改善措施及後續追蹤項目。
+*   **對應範例**：[UC-006 勞工健康服務臨場服務紀錄封包範例](Bundle-UC-006.html)。

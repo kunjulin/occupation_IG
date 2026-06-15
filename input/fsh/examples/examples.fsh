@@ -347,6 +347,7 @@ InstanceOf: TWHACompositionProfile
 Title: "一般健檢報告組成文件範例 (UC-001)"
 Description: "整合王大同一般健康檢查所有關聯項目的 Composition 臨床文件範例。"
 * status = #final
+* title = "一般健康檢查報告"
 * subject = Reference(example-worker)
 * author = Reference(example-doctor)
 * date = "2026-06-12T11:45:00+08:00"
@@ -373,6 +374,7 @@ InstanceOf: TWHACompositionProfile
 Title: "勞工一般體格與健康檢查報告組成文件範例 (UC-002)"
 Description: "整合王大同勞工一般健康檢查關聯項目的 Composition 臨床文件範例。"
 * status = #final
+* title = "勞工一般體格及健康檢查紀錄"
 * subject = Reference(example-worker)
 * author = Reference(example-doctor)
 * date = "2026-06-12T11:45:00+08:00"
@@ -401,6 +403,7 @@ InstanceOf: TWHACompositionProfile
 Title: "特殊危害健康作業檢查報告組成文件範例 (UC-003)"
 Description: "整合王大同噪音/鉛/粉塵特殊危害作業檢查項目的 Composition 臨床文件範例。"
 * status = #final
+* title = "特殊危害健康作業檢查報告"
 * subject = Reference(example-worker)
 * author = Reference(example-doctor)
 * date = "2026-06-12T11:45:00+08:00"
@@ -423,6 +426,7 @@ InstanceOf: TWHACompositionProfile
 Title: "自費健康檢查與進階影像鏡檢報告組成文件範例 (UC-004)"
 Description: "整合王大同自費影像造影與內視鏡檢查項目的 Composition 臨床文件範例。"
 * status = #final
+* title = "自費健康檢查報告"
 * subject = Reference(example-worker)
 * author = Reference(example-doctor)
 * date = "2026-06-12T11:45:00+08:00"
@@ -448,6 +452,7 @@ InstanceOf: TWHACompositionProfile
 Title: "成人預防保健檢查報告組成文件範例 (UC-005)"
 Description: "整合王大同成人預防保健與生活習慣問卷項目的 Composition 臨床文件範例。"
 * status = #final
+* title = "成人預防保健檢查報告"
 * subject = Reference(example-worker)
 * author = Reference(example-doctor)
 * date = "2026-06-12T11:45:00+08:00"
