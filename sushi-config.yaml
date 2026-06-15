@@ -1,8 +1,8 @@
-id: mohw.tw.ohe
-canonical: https://twcore.mohw.gov.tw/ig/ohe
-name: TWOHEIG
-title: 臺灣勞工職業健康體格及健康檢查實作指引 (Taiwan Occupational Health Examination Implementation Guide)
-description: 臺灣勞工健康檢查與臨場健康服務執行紀錄之 FHIR 實作指引。依據《勞工健康保護規則》設計，繼承臺灣核心實作指引 (TW Core IG)。
+id: mohw.tw.twha
+canonical: https://twcore.mohw.gov.tw/ig/twha
+name: TWHAIG
+title: 臺灣健康檢查資料交換實作指引 (Taiwan Health Assessment Implementation Guide, TWHA IG)
+description: 建立一般健康檢查、勞工健康檢查及成人預防保健之 FHIR 資料交換標準。繼承臺灣核心實作指引 (TW Core IG)。
 status: active
 version: 0.1.0
 fhirVersion: 4.0.1
@@ -18,7 +18,24 @@ contact:
         value: https://twcore.mohw.gov.tw/twregistry/
 dependencies:
   tw.gov.mohw.twcore: 1.0.0
-  fhir.twcrsf: 0.1.1
+
+parameters:
+  special-url:
+    - https://hapi.fhir.tw/fhir/CodeSystem/sf-BetNutChewAmount-codesystem
+    - https://hapi.fhir.tw/fhir/CodeSystem/sf-BetNutChewBeh-codesystem
+    - https://hapi.fhir.tw/fhir/CodeSystem/sf-BetNutChewQuit-codesystem
+    - https://hapi.fhir.tw/fhir/CodeSystem/sf-BetNutChewYear-codesystem
+    - https://hapi.fhir.tw/fhir/CodeSystem/sf-ObserBeh-codesystem
+    - https://hapi.fhir.tw/fhir/ValueSet/sf-BetNutChewAmount-valueset
+    - https://hapi.fhir.tw/fhir/ValueSet/sf-BetNutChewBeh-valueset
+    - https://hapi.fhir.tw/fhir/ValueSet/sf-BetNutChewQuit-valueset
+    - https://hapi.fhir.tw/fhir/ValueSet/sf-BetNutChewYear-valueset
+  no-validate:
+    - https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-CoreDataset
+    - https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-ExtendedDataset
+    - https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-PulmonaryFunction
+    - https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-TWHAVitalSigns
+    - https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-UnfitDiseases
 
 menu:
   首頁 (Home): index.html
@@ -27,8 +44,9 @@ menu:
     應用案例 (Use Cases): usecases.html
   資料模型 (Data Model): datamodel.html
   檢查與紀錄定義 (Examinations):
-    一般體格及健康檢查 (General Exam): general-exam.html
-    特殊危害健康作業檢查 (Special Exam): special-exam.html
+    一般健康檢查 (General Exam): general-exam.html
+    特殊危害健康作業 (Special Exam): special-exam.html
+    成人預防保健 (Adult Preventive Care): adult-preventive-care.html
     勞工健康服務執行紀錄 (Service Record): service-record.html
     健康管理分級 (Health Management): health-management.html
   FHIR 資源 (FHIR Artifacts):

@@ -6,11 +6,11 @@
 
 *   **LOINC (Logical Observation Identifiers Names and Codes)**：
     - 用於所有一般檢驗、生理功能檢查（肺功能、心電圖、聽力測試）及生理測量（身高、體重、血壓）的 Observation.code 定義。
-    - 本指引所使用的 LOINC 代碼集已彙整至 [VS-GeneralLabTests](ValueSet-VS-GeneralLabTests.html) 與 [VS-SpecialLabTests](ValueSet-VS-SpecialLabTests.html)。
+    - 本指引所使用的 LOINC 代碼集已彙整至 [VS-CoreDataset](ValueSet-VS-CoreDataset.html) 與 [VS-ExtendedDataset](ValueSet-VS-ExtendedDataset.html)。
 *   **SNOMED CT (Systematized Nomenclature of Medicine - Clinical Terms)**：
     - 用於生活習慣（如嚼檳榔狀態 `698188003`）、臨場服務現場發現之職業危害（`278486003`）、改善建議諮詢（`315640000`）等臨床發現與程序代碼。
 *   **ICD-10-CM (Clinical Modification)**：
-    - 用於記錄勞工既往病史（`OHE-Condition`）以及附表十二所列之不適合從事特定危害作業疾病。
+    - 用於記錄勞工既往病史（`TWHA-Condition`）以及附表十二所列之不適合從事特定危害作業疾病。
 
 ---
 

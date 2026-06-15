@@ -1,0 +1,16 @@
+== Suppressed Messages ==
+
+# SSL certificate error: building offline, cannot fix network certificate issue
+PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException
+
+# Building without FHIR terminology server (-tx n/a), expected for offline build
+No server available
+
+# MDC/DICOM OID CodeSystem (ECG lead codes) not available offline
+A definition for CodeSystem 'urn:oid:2.16.840.1.113883.6.24' could not be found, so the code cannot be validated
+
+# External RadLex PlayBook ValueSet cannot be resolved offline
+The valueSet reference http://www.rsna.org/RadLex_Playbook.aspx on element
+
+# External DICOM SOP class ValueSet reference cannot be resolved offline
+The valueSet reference http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html

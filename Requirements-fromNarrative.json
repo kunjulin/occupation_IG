@@ -1,7 +1,7 @@
 {
   "resourceType" : "Requirements",
   "id" : "fromNarrative",
-  "url" : "https://twcore.mohw.gov.tw/ig/ohe/Requirements/fromNarrative",
+  "url" : "https://twcore.mohw.gov.tw/ig/twha/Requirements/fromNarrative",
   "name" : "FromNarrative",
   "title" : "Narrative Conformance Statements",
   "status" : "active",

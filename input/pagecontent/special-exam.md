@@ -1,6 +1,6 @@
 # 特殊體格及健康檢查 (Special Physical & Health Examination)
 
-特殊體格及健康檢查適用於從事特別危害健康作業之勞工。本指引依據勞動部《勞工健康保護規則》附表規定，將特別危害健康作業之實驗室與生理功能檢驗項目對應至國際標準 LOINC 代碼，並收錄於 [特殊健康檢查及體格檢查實驗室項目值集](ValueSet-VS-SpecialLabTests.html) 中。
+特殊體格及健康檢查適用於從事特別危害健康作業之勞工。本指引依據勞動部《勞工健康保護規則》附表規定，將特別危害健康作業之實驗室與生理功能檢驗項目對應至國際標準 LOINC 代碼，並收錄於 [特殊健康檢查及體格檢查實驗室項目值集](ValueSet-VS-ExtendedDataset.html) 中。
 
 依據實作指引之 **特別危害健康作業類別值集 (VS-HazardType)**，本指引對應並收錄以下 12 大類特別危害健康作業類別之核心檢驗與評估項目：
 
@@ -20,8 +20,8 @@
 
 *   **適用對象**：連續八小時工作期間之均權音量達八十五分貝以上之作業勞工。
 *   **核心生理與實驗室檢查項目**：
-    *   **外耳與鼓膜檢查**：理學檢查 `OHE-PhysicalExam` 記錄外耳道及鼓膜狀態。
-    *   **純音聽力測試 (Audiometry)**：使用 `OHE-HearingTest` 記錄。聽力計量測項目代碼為 LOINC `89024-4` (Hearing threshold 500 Hz Ear-L)。包含雙耳在 500Hz、1000Hz、2000Hz、3000Hz、4000Hz、6000Hz 及 8000Hz 等頻率下之氣導聽閾測量。
+    *   **外耳與鼓膜檢查**：理學檢查 `TWHA-PhysicalExam` 記錄外耳道及鼓膜狀態。
+    *   **純音聽力測試 (Audiometry)**：使用 `TWHA-HearingTest` 記錄。聽力計量測項目代碼為 LOINC `89024-4` (Hearing threshold 500 Hz Ear-L)。包含雙耳在 500Hz、1000Hz、2000Hz、3000Hz、4000Hz、6000Hz 及 8000Hz 等頻率下之氣導聽閾測量。
 
 ---
 
@@ -42,7 +42,7 @@
 
 *   **適用對象**：從事潛水作業或高壓室內作業之勞工。
 *   **核心生理與實驗室檢查項目**：
-    *   **心電圖檢查 (ECG Study)**：採用 `OHE-ECG` 記錄心電圖檢查結果（LOINC `11524-6`）。
+    *   **心電圖檢查 (ECG Study)**：採用 `TWHA-ECG` 記錄心電圖檢查結果（LOINC `11524-6`）。
     *   **肺功能檢查 (Spirometry)**：FEV1 (LOINC `19868-9`)、FVC (LOINC `19876-2`) 及 FEV1/FVC 比值 (LOINC `19926-5`)，評估氣壓急遽變化下之呼吸系統耐受力。
     *   **骨骼 X 光檢查 (Bone X-ray)**：針對肩關節、髖關節及股骨等進行 X 光大骨骼篩檢（LOINC `24579-5`），以評估是否有減壓病引起之無菌性骨壞死（Aseptic Bone Necrosis）。
 
@@ -73,8 +73,8 @@
 
 *   **適用對象**：從事粉塵危害預防標準所定義之粉塵作業勞工。
 *   **核心生理與實驗室檢查項目**：
-    *   **胸部 X 光檢查 (Chest X-ray)**：採用 `OHE-ImagingStudy` 記錄影像，並以 `OHE-DiagnosticReport` 記錄 X 光大片攝影診斷報告（LOINC `36643-5`），評估塵肺症（Pneumoconiosis）之分期。
-    *   **肺功能檢查 (Spirometry)**：採用 `OHE-PulmonaryFunction`。記錄 FEV1 (LOINC `19868-9`)、FVC (LOINC `19876-2`) 及 FEV1/FVC 比值 (LOINC `19926-5`)。
+    *   **胸部 X 光檢查 (Chest X-ray)**：採用 `TWHA-ImagingStudy` 記錄影像，並以 `TWHA-DiagnosticReport` 記錄 X 光大片攝影診斷報告（LOINC `36643-5`），評估塵肺症（Pneumoconiosis）之分期。
+    *   **肺功能檢查 (Spirometry)**：採用 `TWHA-PulmonaryFunction`。記錄 FEV1 (LOINC `19868-9`)、FVC (LOINC `19876-2`) 及 FEV1/FVC 比值 (LOINC `19926-5`)。
 
 ---
 

@@ -28,41 +28,41 @@ Alias: TWCoreCondition = https://twcore.mohw.gov.tw/ig/twcore/StructureDefinitio
 Alias: TWCoreDiagnosticReport = https://twcore.mohw.gov.tw/ig/twcore/StructureDefinition/DiagnosticReport-twcore
 
 // Local OHE Canonical URLs (using our own base)
-Alias: OHEPatient = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Patient
-Alias: OHEPractitioner = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Practitioner
-Alias: OHEOrganizationEmployer = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Organization-Employer
-Alias: OHEOrganizationFacility = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Organization-Facility
-Alias: OHEEncounter = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Encounter
-Alias: OHEEncounterService = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Encounter-Service
-Alias: OHEComposition = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Composition
-Alias: OHECompositionServiceRecord = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Composition-ServiceRecord
-Alias: OHEDiagnosticReport = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-DiagnosticReport
-Alias: OHEBundle = https://twcore.mohw.gov.tw/ig/ohe/StructureDefinition/OHE-Bundle
+Alias: TWHAPatient = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Patient
+Alias: TWHAPractitioner = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Practitioner
+Alias: TWHAOrganizationEmployer = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Organization-Employer
+Alias: TWHAOrganizationFacility = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Organization-Facility
+Alias: TWHAEncounter = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Encounter
+Alias: TWHAEncounterService = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Encounter-Service
+Alias: TWHAComposition = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Composition
+Alias: TWHACompositionServiceRecord = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Composition-ServiceRecord
+Alias: TWHADiagnosticReport = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-DiagnosticReport
+Alias: TWHABundle = https://twcore.mohw.gov.tw/ig/twha/StructureDefinition/TWHA-Bundle
 
 // CodeSystems and ValueSets Local
-Alias: CS_ExamType = https://twcore.mohw.gov.tw/ig/ohe/CodeSystem/CS-ExamType
-Alias: CS_HazardType = https://twcore.mohw.gov.tw/ig/ohe/CodeSystem/CS-HazardType
-Alias: CS_SmokingStatus = https://twcore.mohw.gov.tw/ig/ohe/CodeSystem/CS-SmokingStatus
-Alias: CS_HealthMgmtLevel = https://twcore.mohw.gov.tw/ig/ohe/CodeSystem/CS-HealthMgmtLevel
-Alias: CS_FitnessForWork = https://twcore.mohw.gov.tw/ig/ohe/CodeSystem/CS-FitnessForWork
-Alias: CS_LaborReportCode = https://twcore.mohw.gov.tw/ig/ohe/CodeSystem/CS-LaborReportCode
-Alias: CS_ServiceActivityType = https://twcore.mohw.gov.tw/ig/ohe/CodeSystem/CS-ServiceActivityType
+Alias: CS_ExamType = https://twcore.mohw.gov.tw/ig/twha/CodeSystem/CS-ExamType
+Alias: CS_HazardType = https://twcore.mohw.gov.tw/ig/twha/CodeSystem/CS-HazardType
+Alias: CS_SmokingStatus = https://twcore.mohw.gov.tw/ig/twha/CodeSystem/CS-SmokingStatus
+Alias: CS_HealthMgmtLevel = https://twcore.mohw.gov.tw/ig/twha/CodeSystem/CS-HealthMgmtLevel
+Alias: CS_FitnessForWork = https://twcore.mohw.gov.tw/ig/twha/CodeSystem/CS-FitnessForWork
+Alias: CS_LaborReportCode = https://twcore.mohw.gov.tw/ig/twha/CodeSystem/CS-LaborReportCode
+Alias: CS_ServiceActivityType = https://twcore.mohw.gov.tw/ig/twha/CodeSystem/CS-ServiceActivityType
 
-Alias: VS_ExamType = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-ExamType
-Alias: VS_HazardType = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-HazardType
-Alias: VS_SmokingStatus = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-SmokingStatus
-Alias: VS_HealthMgmtLevel = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-HealthMgmtLevel
-Alias: VS_FitnessForWork = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-FitnessForWork
-Alias: VS_LaborReportCode = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-LaborReportCode
-Alias: VS_ServiceActivityType = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-ServiceActivityType
-Alias: VS_GeneralLabTests = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-GeneralLabTests
-Alias: VS_SpecialLabTests = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-SpecialLabTests
-Alias: VS_OHEVitalSigns = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-OHEVitalSigns
-Alias: VS_PhysicalExamSystems = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-PhysicalExamSystems
-Alias: VS_UnfitDiseases = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-UnfitDiseases
-Alias: VS_OrganicSolventType = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-OrganicSolventType
-Alias: VS_SpecificChemicalType = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-SpecificChemicalType
-Alias: VS_PulmonaryFunction = https://twcore.mohw.gov.tw/ig/ohe/ValueSet/VS-PulmonaryFunction
+Alias: VS_ExamType = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-ExamType
+Alias: VS_HazardType = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-HazardType
+Alias: VS_SmokingStatus = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-SmokingStatus
+Alias: VS_HealthMgmtLevel = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-HealthMgmtLevel
+Alias: VS_FitnessForWork = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-FitnessForWork
+Alias: VS_LaborReportCode = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-LaborReportCode
+Alias: VS_ServiceActivityType = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-ServiceActivityType
+Alias: VS_CoreDataset = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-CoreDataset
+Alias: VS_ExtendedDataset = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-ExtendedDataset
+Alias: VS_TWHAVitalSigns = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-TWHAVitalSigns
+Alias: VS_PhysicalExamSystems = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-PhysicalExamSystems
+Alias: VS_UnfitDiseases = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-UnfitDiseases
+Alias: VS_OrganicSolventType = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-OrganicSolventType
+Alias: VS_SpecificChemicalType = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-SpecificChemicalType
+Alias: VS_PulmonaryFunction = https://twcore.mohw.gov.tw/ig/twha/ValueSet/VS-PulmonaryFunction
 
 // TWCRSF (Taiwan Cancer Registry Short Form) Aliases
 Alias: TWCRSFBetNutChewBehProfile = https://hapi.fhir.tw/fhir/StructureDefinition/sf-BetNutChewBeh-profile

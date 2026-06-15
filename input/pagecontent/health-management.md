@@ -12,9 +12,9 @@
 *   **第四級管理 (Level 4)**: 健檢有異常，且經評估與工作相關，屬健康危害顯著，需立即醫療處置與工作調整。
 
 ### FHIR 建模表達：
-- 使用 **`OHE-ClinicalImpression`** Profile 記錄醫師總評。
+- 使用 **`TWHA-ClinicalImpression`** Profile 記錄醫師總評。
 - 在 ClinicalImpression 中，以 **`ext-health-mgmt-level`** 擴充欄位記錄 `level-1` 至 `level-4` 的代碼。
-- 亦可在打包的 Bundle 中，以獨立的 `OHE-HealthManagementLevel` Observation 資源記錄此判定分級。
+- 亦可在打包的 Bundle 中，以獨立的 `TWHA-HealthManagementLevel` Observation 資源記錄此判定分級。
 
 ---
 
@@ -23,7 +23,7 @@
 對於判定為 **第四級管理** 之勞工，雇主依法必須採取適性配工與職務調整措施。
 
 ### FHIR 建模表達：
-- **適性配工計畫 (`OHE-CarePlan`)**：
+- **適性配工計畫 (`TWHA-CarePlan`)**：
   - `subject` 指向受影響之勞工。
   - `intent` 設為 `plan`。
   - 使用 **`ext-fitness-for-work`** 擴充欄位標註具體建議項目：
@@ -40,7 +40,7 @@
 對於判定為 **第三級管理** 之勞工，通常需要開立追蹤重檢或排程現場暴露危害調查。
 
 ### FHIR 建模表達：
-- 使用 **`OHE-ServiceRequest`** Profile（繼承自 `TWCoreServiceRequest`）開立追蹤要求。
+- 使用 **`TWHA-ServiceRequest`** Profile（繼承自 `TWCoreServiceRequest`）開立追蹤要求。
 - `requester` 為判定醫師或健檢醫院。
 - `occurrenceDateTime` 標註預定進行追蹤重檢之日期。
-- `reasonReference` 關聯至導致第三級管理判定之異常檢查項目（例如：聽力異常 `OHE-HearingTest` 實例）。
+- `reasonReference` 關聯至導致第三級管理判定之異常檢查項目（例如：聽力異常 `TWHA-HearingTest` 實例）。

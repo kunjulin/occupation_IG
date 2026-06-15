@@ -8,30 +8,30 @@
 
 | 欄位 | FHIR Profile / Resource | 代碼 / 術語系統 | 備註 |
 |:---|:---|:---|:---|
-| **吸菸狀態** | `OHE-SocialHistory-Smoking` | LOINC `72166-2` (Tobacco smoking status) | 值使用 `VS_SmokingStatus`；菸量（每日支數、菸齡）以擴充 `ext-smoking-quantity` 記錄。 |
-| **嚼檳狀態** | `OHE-SocialHistory-BetelNut` | SNOMED CT `698188003` (Chews betel quid) | 值使用 `VS_BetelNutStatus`；嚼檳量及檳齡以擴充 `ext-betelnut-quantity` 記錄；戒檳月數以擴充 `ext-cessation-duration` 記錄。 |
-| **飲酒習慣** | `OHE-SocialHistory-Alcohol` | LOINC `11331-6` (History of Alcohol use) | 記錄飲酒頻率。 |
-| **睡眠時間** | `OHE-SocialHistory-Sleep` | LOINC `93832-4` (Sleep duration) | 記錄平均每日睡眠時間（單位：小時，UCUM: `h`）。 |
-| **既往病史** | `OHE-Condition` | ICD-10-CM | 記錄高血壓（`I10`）、糖尿病（`E11`）等慢性病既往史。 |
+| **吸菸狀態** | `TWHA-SocialHistory-Smoking` | LOINC `72166-2` (Tobacco smoking status) | 值使用 `VS_SmokingStatus`；菸量（每日支數、菸齡）以擴充 `ext-smoking-quantity` 記錄。 |
+| **嚼檳狀態** | `TWHA-SocialHistory-BetelNut` | SNOMED CT `698188003` (Chews betel quid) | 值使用 `VS_BetelNutStatus`；嚼檳量及檳齡以擴充 `ext-betelnut-quantity` 記錄；戒檳月數以擴充 `ext-cessation-duration` 記錄。 |
+| **飲酒習慣** | `TWHA-SocialHistory-Alcohol` | LOINC `11331-6` (History of Alcohol use) | 記錄飲酒頻率。 |
+| **睡眠時間** | `TWHA-SocialHistory-Sleep` | LOINC `93832-4` (Sleep duration) | 記錄平均每日睡眠時間（單位：小時，UCUM: `h`）。 |
+| **既往病史** | `TWHA-Condition` | ICD-10-CM | 記錄高血壓（`I10`）、糖尿病（`E11`）等慢性病既往史。 |
 
 ---
 
 ## 2. 生理測量項目與 LOINC 對應
 
-生理測量（Vital Signs）採用 `OHE-VitalSigns` Profile 記錄，完全符合國際生命徵象標準：
+生理測量（Vital Signs）採用 `TWHA-VitalSigns` Profile 記錄，完全符合國際生命徵象標準：
 
 *   **身高 (Body Height)**: LOINC `8302-2`，單位：`cm`
 *   **體重 (Body Weight)**: LOINC `29463-7`，單位：`kg`
 *   **腰圍 (Waist Circumference)**: LOINC `56086-2`，單位：`cm`
 *   **血壓 (Blood Pressure)**: 採用 `TWCoreBloodPressure` Profile。包含收縮壓（LOINC `8480-6`，單位：`mmHg`）與舒張壓（LOINC `8462-4`，單位：`mmHg`）之雙 component 結構。
-*   **視力與辨色力**: 採用 `OHE-VisionTest` Profile，以 component 結構區分左眼視力（LOINC `70936-0`）、右眼視力（LOINC `70935-2`）及辨色力（LOINC `48024-3`，正常/異常）。
-*   **聽力**: 採用 `OHE-HearingTest` Profile，以 component 結構區分左耳聽力（LOINC `89023-6`）與右耳聽力（LOINC `89022-8`）。
+*   **視力與辨色力**: 採用 `TWHA-VisionTest` Profile，以 component 結構區分左眼視力（LOINC `70936-0`）、右眼視力（LOINC `70935-2`）及辨色力（LOINC `48024-3`，正常/異常）。
+*   **聽力**: 採用 `TWHA-HearingTest` Profile，以 component 結構區分左耳聽力（LOINC `89023-6`）與右耳聽力（LOINC `89022-8`）。
 
 ---
 
 ## 3. 理學檢查項目 (Physical Examinations)
 
-各系統理學檢查採用 `OHE-PhysicalExam` Profile 記錄，其代碼為 LOINC `29545-1` (Physical findings panel)。其細項以 `component` 記錄，包括：
+各系統理學檢查採用 `TWHA-PhysicalExam` Profile 記錄，其代碼為 LOINC `29545-1` (Physical findings panel)。其細項以 `component` 記錄，包括：
 *   頭頸部 (`head-neck`)
 *   呼吸系統 (`respiratory`)
 *   心臟血管系統 (`cardiovascular`)
@@ -46,7 +46,7 @@
 
 ## 4. 實驗室檢驗項目 (Laboratory Tests)
 
-一般實驗室檢驗採用 `OHE-LabResult-General` Profile，檢驗項目代碼必須綁定至 `VS_GeneralLabTests` 值集。主要項目包括：
+一般實驗室檢驗採用 `TWHA-LabResult-General` Profile，檢驗項目代碼必須綁定至 `VS_GeneralLabTests` 值集。主要項目包括：
 
 *   **空腹血糖**: LOINC `1558-6`，單位：`mg/dL`
 *   **血清丙胺酸轉胺酶 (ALT/SGPT)**: LOINC `1742-6`，單位：`U/L`
