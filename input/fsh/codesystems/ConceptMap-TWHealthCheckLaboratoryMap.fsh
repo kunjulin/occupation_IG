@@ -100,3 +100,95 @@ Description: "將健康檢查實驗室檢驗之可接受代碼 (Layer 2) 映射�
 * group[0].element[12].target[0].code = #13955-0
 * group[0].element[12].target[0].display = "Hepatitis C virus Ab [Presence] in Serum or Plasma"
 * group[0].element[12].target[0].equivalence = #equivalent
+
+// =============================================================
+// 血液學群組 (Hematology) — 新增 4 組
+// 注意：Hemoglobin (718-7) 無 Acceptable 代碼；MCHC (786-4) 因語意差異亦不建立對應
+// =============================================================
+
+// Platelet (Acceptable: 26515-7 Automated count → Preferred: 777-3)
+* group[0].element[13].code = #26515-7
+* group[0].element[13].display = "Platelets [#/volume] in Blood by Automated count"
+* group[0].element[13].target[0].code = #777-3
+* group[0].element[13].target[0].display = "Platelets [#/volume] in Blood"
+* group[0].element[13].target[0].equivalence = #equivalent
+
+// MCV (Acceptable: 30428-7 by calculation → Preferred: 787-2 by Automated count)
+* group[0].element[14].code = #30428-7
+* group[0].element[14].display = "MCV [Entitic volume] by calculation"
+* group[0].element[14].target[0].code = #787-2
+* group[0].element[14].target[0].display = "MCV [Entitic volume] by Automated count"
+* group[0].element[14].target[0].equivalence = #equivalent
+
+// MCH (Acceptable: 28539-5 by Automated count → Preferred: 785-6 by Automated count)
+* group[0].element[15].code = #28539-5
+* group[0].element[15].display = "MCH [Entitic mass] by Automated count"
+* group[0].element[15].target[0].code = #785-6
+* group[0].element[15].target[0].display = "MCH [Entitic mass] by Automated count"
+* group[0].element[15].target[0].equivalence = #equivalent
+
+// Neutrophil % (Acceptable: 26508-2 Manual count → Preferred: 770-8 Automated count)
+* group[0].element[16].code = #26508-2
+* group[0].element[16].display = "Neutrophils/100 leukocytes in Blood by Manual count"
+* group[0].element[16].target[0].code = #770-8
+* group[0].element[16].target[0].display = "Neutrophils/100 leukocytes in Blood by Automated count"
+* group[0].element[16].target[0].equivalence = #equivalent
+
+// =============================================================
+// 肝功能群組 (Liver Function) — 新增 3 組
+// =============================================================
+
+// AST / GOT (Acceptable: 14409-7 by UV with P5P → Preferred: 1920-8)
+* group[0].element[17].code = #14409-7
+* group[0].element[17].display = "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by UV with P5P"
+* group[0].element[17].target[0].code = #1920-8
+* group[0].element[17].target[0].display = "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+* group[0].element[17].target[0].equivalence = #equivalent
+
+// ALT / GPT (Acceptable: 14390-9 by UV with P5P → Preferred: 1742-6)
+* group[0].element[18].code = #14390-9
+* group[0].element[18].display = "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by UV with P5P"
+* group[0].element[18].target[0].code = #1742-6
+* group[0].element[18].target[0].display = "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+* group[0].element[18].target[0].equivalence = #equivalent
+
+// ALP (Acceptable: 1783-0 method-unspecified → Preferred: 6768-6)
+* group[0].element[19].code = #1783-0
+* group[0].element[19].display = "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+* group[0].element[19].target[0].code = #6768-6
+* group[0].element[19].target[0].display = "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+* group[0].element[19].target[0].equivalence = #equivalent
+
+// =============================================================
+// 內分泌與癌症標記群組 (Endocrine & Tumor Markers) — 新增 4 組
+// =============================================================
+
+// HbA1c (Acceptable: 59261-8 IFCC mmol/mol → Preferred: 4548-4 NGSP %)
+// 單位換算說明：IFCC (mmol/mol) = (NGSP(%) - 2.152) / 0.9148
+* group[0].element[20].code = #59261-8
+* group[0].element[20].display = "Hemoglobin A1c/Hemoglobin.total in Blood by IFCC protocol"
+* group[0].element[20].target[0].code = #4548-4
+* group[0].element[20].target[0].display = "Hemoglobin A1c/Hemoglobin.total in Blood"
+* group[0].element[20].target[0].equivalence = #equivalent
+* group[0].element[20].target[0].comment = "Unit conversion required: NGSP(%) = IFCC(mmol/mol) * 0.9148 + 2.152"
+
+// TSH (Acceptable: 3016-3 3rd generation IS → Preferred: 11580-8)
+* group[0].element[21].code = #3016-3
+* group[0].element[21].display = "Thyrotropin [Units/volume] in Serum or Plasma by 3rd IS"
+* group[0].element[21].target[0].code = #11580-8
+* group[0].element[21].target[0].display = "Thyrotropin [Units/volume] in Serum or Plasma"
+* group[0].element[21].target[0].equivalence = #equivalent
+
+// PSA (Acceptable: 19199-9 method-unspecified → Preferred: 2857-1)
+* group[0].element[22].code = #19199-9
+* group[0].element[22].display = "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+* group[0].element[22].target[0].code = #2857-1
+* group[0].element[22].target[0].display = "Prostate specific Ag [Mass/volume] in Serum or Plasma"
+* group[0].element[22].target[0].equivalence = #equivalent
+
+// CA-125 (Acceptable: 83085-1 by IA → Preferred: 10334-1)
+* group[0].element[23].code = #83085-1
+* group[0].element[23].display = "Cancer Ag 125 [Units/volume] in Serum or Plasma by Immunoassay"
+* group[0].element[23].target[0].code = #10334-1
+* group[0].element[23].target[0].display = "Cancer Ag 125 [Units/volume] in Serum or Plasma"
+* group[0].element[23].target[0].equivalence = #equivalent

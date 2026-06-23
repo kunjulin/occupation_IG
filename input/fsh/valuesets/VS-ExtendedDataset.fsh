@@ -14,8 +14,19 @@ Description: "包含特殊健康檢查與體格檢查之實驗室與生理功能
 * LNC#2823-3 "Potassium [Moles/volume] in Serum or Plasma"
 * LNC#5810-7 "Specific gravity of Urine"
 
-// 1.2 噪音作業 (noise)
-* LNC#89024-4 "Hearing threshold 500 Hz Ear-L"
+// 1.2 噪音作業 (noise) — 純音聽力個別頻率代碼 (v3 修正：補齊左右耳 4 頻率共 8 個代碼)
+// Panel code 89015-2 收錄於 VS-CoreDataset，本 VS 僅收錄個別頻率/耳別代碼
+* LNC#89015-2 "Pure tone threshold audiometry panel"              // Panel (重複收錄供查詢)
+// 左耳 (Left ear)
+* LNC#89024-4 "Hearing threshold Ear-left 500 Hz [dB]"           // L-500Hz (原有，修正 display)
+* LNC#89016-0 "Hearing threshold Ear-left 1000 Hz [dB]"          // L-1kHz (修正：原 89023-6 為 1kHz Left，已確認)
+* LNC#89017-8 "Hearing threshold Ear-left 2000 Hz [dB]"          // L-2kHz (新增)
+* LNC#89018-6 "Hearing threshold Ear-left 4000 Hz [dB]"          // L-4kHz (新增)
+// 右耳 (Right ear)
+* LNC#89028-5 "Hearing threshold Ear-right 500 Hz [dB]"          // R-500Hz (新增)
+* LNC#89020-2 "Hearing threshold Ear-right 1000 Hz [dB]"         // R-1kHz (新增)
+* LNC#89019-4 "Hearing threshold Ear-right 2000 Hz [dB]"         // R-2kHz (新增)
+* LNC#89022-8 "Hearing threshold Ear-right 4000 Hz [dB]"         // R-4kHz (新增)
 
 // 1.3 游離輻射作業 (radiation)
 * LNC#789-8 "Erythrocytes [#/volume] in Blood"
@@ -38,10 +49,8 @@ Description: "包含特殊健康檢查與體格檢查之實驗室與生理功能
 * LNC#11212-8 "Coproporphyrin [Mass/volume] in Urine"
 * LNC#11215-1 "Aminolevulinic acid [Mass/volume] in Urine"
 
-// 1.6 四烷基鉛作業 (tetraalkyl-lead)
-* LNC#5676-2 "Lead [Mass/volume] in Urine"
-* LNC#11212-8 "Coproporphyrin [Mass/volume] in Urine"
-* LNC#11215-1 "Aminolevulinic acid [Mass/volume] in Urine"
+// 1.6 四烷基鉛作業 (tetraalkyl-lead) — 與鉛作業共用以下代碼（已收錄於 1.5，此處不重複）
+// 另有特有代碼：無（四烷基鉛主要透過皮膚及呼吸道吸收，生物標記與鉛作業相同）
 
 // 1.7 粉塵作業 (dust)
 * LNC#36643-5 "XR Chest 2V"
